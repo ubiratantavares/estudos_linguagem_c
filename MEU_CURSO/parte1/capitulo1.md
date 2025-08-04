@@ -41,6 +41,38 @@ podem ser concretizados através de uma linguagem de programação (programas) p
 
 ## 1.2 Componentes de um Computador
 
+Um computador, em sua essência, é uma máquina projetada para **manipular informações**. Para que essa manipulação seja possível e eficiente, ele é composto por um conjunto interligado de 
+elementos fundamentais que trabalham em sinergia: a **Unidade Central de Processamento (UCP)**, a **Memória** e os **Dispositivos de Entrada e Saída (E/S)**, todos conectados por um **barramento**.
+
+A **Unidade Central de Processamento (UCP)**, frequentemente chamada de processador ou microprocessador, é o "cérebro" do computador. Sua função primordial é **orquestrar todas as operações** 
+do sistema. A UCP é geralmente dividida em duas partes principais:
+
+	* A **Unidade Lógica e Aritmética (ULA)**, responsável por executar operações aritméticas (como somas e subtrações) e comparações (como "igual a" ou "maior que").
+	
+	* A **Unidade de Controle (UC)**, que lê instruções e dados da memória, as decodifica, alimenta a ULA com as entradas corretas de acordo com essas instruções e envia 
+	os resultados de volta à memória ou aos dispositivos de saída. Componentes como o **contador de programa (PC)**, que mantém o endereço da instrução atual, e o **registrador de instruções (RI)**, 
+	que define a operação a ser executada, são cruciais para o funcionamento da UC. A UCP opera em um ciclo contínuo, buscando e executando uma instrução por vez, até que o computador seja desligado.
+
+A **Memória**, também conhecida como armazenamento, pode ser visualizada conceitualmente como uma lista de células, onde cada célula possui um **endereço numérico sequencial** e é capaz de armazenar 
+uma pequena e fixa quantidade de informação. Essa informação pode ser tanto **instruções** (o que o computador deve fazer) quanto **dados** (a informação a ser processada). 
+Existem dois tipos principais de memória:
+
+	* **Memórias voláteis (RAM - Random Access Memory)**: São mais rápidas e, geralmente, de menor capacidade, mas necessitam de energia elétrica constante para manter seu conteúdo. 
+	Se o computador for desligado, as informações armazenadas na RAM são perdidas.
+
+	* **Memórias não voláteis (como o Disco Rígido - HD)**: São mais lentas e de maior capacidade, mas armazenam informações de forma permanente, mesmo quando o computador está desligado. 
+	No nível mais fundamental, todas as informações (programas, textos, imagens) são armazenadas na memória como **códigos numéricos binários**, compostos por **bits** (dígitos 0 ou 1) agrupados em **bytes** (conjuntos de 8 bits).
+
+Os **Dispositivos de Entrada e Saída (E/S)** são a interface do computador com o mundo exterior. Eles permitem que o computador receba informações (dispositivos de entrada) e as devolva 
+(dispositivos de saída). Exemplos comuns de dispositivos de entrada incluem **teclados, mouses, scanners e microfones**, enquanto **monitores e impressoras** são exemplos de dispositivos de saída. 
+Alguns dispositivos, como **discos rígidos e placas de rede**, podem atuar tanto como entrada quanto como saída.
+
+Finalmente, o **barramento (BUS)** é o **canal de comunicação** que interliga todos esses componentes essenciais: UCP, memória e dispositivos de E/S. 
+Ele atua como uma via por onde as informações (dados e instruções) transitam entre as diferentes partes do computador, garantindo que elas possam se comunicar e trabalhar em conjunto.
+
+A integração e o funcionamento harmonioso da UCP, Memória, Dispositivos de E/S e o barramento são o que permitem que um computador execute programas, processe informações e, 
+em última instância, solucione problemas, transformando algoritmos abstratos em ações concretas.
+
 ## 1.3 Hardware e Software
 
 ## 1.4 Linguagens de Programação
