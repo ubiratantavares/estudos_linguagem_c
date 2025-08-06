@@ -253,6 +253,75 @@ int main (void) {
 
 ### 5. Protótipos de Função
 
+O **protótipo de função**, também conhecido como **cabeçalho da função** ou **alusão da função**, é uma **declaração** que estabelece a interface de uma função sem revelar sua implementação. Em sua essência, ele informa ao compilador o **nome da função**, o **tipo do valor que ela retorna** e os **tipos dos seus parâmetros**, finalizando com um ponto e vírgula (`;`).
+
+A utilização de protótipos de função é uma prática fundamental na programação em C e em linguagens similares, oferecendo diversas vantagens:
+
+* **Propósito e Verificação pelo Compilador**:
+
+* É **obrigatório** declarar o protótipo de uma função antes que ela seja chamada no programa.
+* O compilador utiliza o protótipo para realizar **verificações cruciais em tempo de compilação**, prevenindo erros que seriam mais difíceis de depurar em tempo de execução.
+* Ele verifica se o **cabeçalho da função** (sua definição) corresponde ao seu protótipo.
+* Garante que a **chamada da função** contém o número e os tipos corretos de argumentos, na ordem esperada.
+* Verifica se o **valor de retorno** da função é compatível com o contexto em que é utilizado (por exemplo, se uma função `void` não é atribuída a uma variável).
+* Permite a **conversão implícita** de argumentos para os tipos especificados nos parâmetros, quando apropriado, e sinaliza erros se a conversão não for permitida.
+
+* **Sintaxe e Componentes**:
+* A forma geral do protótipo é: `<tipo_do_retorno> <nome_da_função> (<lista_de_parâmetros>);`.
+* A **lista de parâmetros** deve especificar o tipo de cada variável, mesmo que os nomes das variáveis sejam opcionais. Contudo, é uma boa prática manter os nomes para fins de documentação e clareza do código.
+* Para funções que não retornam valor, o `<tipo_do_retorno>` é **`void`**.
+* Se uma função não aceita parâmetros, a palavra-chave **`void`** deve ser colocada entre os parênteses na lista de parâmetros.
+
+* **Posicionamento no Código**:
+* Os protótipos são geralmente colocados no **início do arquivo fonte**, logo após as diretivas `#include`, ou em **arquivos de interface (`.h`)**.
+* Definir as funções em qualquer ordem é possível graças à declaração explícita dos protótipos.
+
+* **Modularização e Reutilização**:
+* Os protótipos contribuem para a **modularização** do código, permitindo que as funções sejam definidas em arquivos separados e compiladas independentemente.
+* Isso torna o programa **mais compreensível e modificável**, pois os detalhes de implementação podem ser "escondidos" dos módulos que utilizam a função.
+* Facilita a **reutilização de código**, uma vez que um programa pode ser construído a partir de pequenos blocos de código (funções) com tarefas específicas e bem definidas.
+
+* **Parâmetros Específicos**:
+* Quando um **vetor ou matriz** é passado como parâmetro para uma função, ele é declarado no protótipo apenas com colchetes vazios (`[]`). Internamente, o nome do vetor ou matriz é tratado como um **ponteiro** para seu primeiro elemento.
+* É possível declarar o tamanho do vetor explicitamente no protótipo, mas o tamanho é irrelevante para a definição da função.
+* Para funções que recebem **ponteiros para funções** como parâmetros, o protótipo da função que recebe o ponteiro deve incluir a declaração completa do ponteiro para função, incluindo seu tipo de retorno e lista de parâmetros. Isso é crucial para a criação de **códigos genéricos**.
+
+Em resumo, o protótipo de função é uma **ferramenta essencial** em C que **define a interface** de uma função, capacitando o compilador a realizar **verificações de tipo e sintaxe** em tempo de compilação, o que é fundamental para a **robustez e modularidade** de programas complexos.
+
+```c
+// Comando para compilar: gcc -Wall -o exemplo4 exemplo4.c
+// Comando para executar: ./exemplo4
+
+#include <stdio.h>
+
+unsigned int count = 10; // variável global
+
+// protótipo de função
+unsigned int Soma(unsigned char x, unsigned char z);
+int Divide(int x, int z);
+
+int main (void) {
+    unsigned int result = Soma(200, 56);
+    printf("Soma: %d \n", result); 
+    printf("Divisão: %d \n", Divide(100, 50));
+    printf("Divisão somado com count: %d \n", Divide(100, 5) + count); // Teste de divisão por zero
+    return 0;
+}
+
+unsigned int Soma(unsigned char x, unsigned char z) {
+    return x + z;
+}
+
+int Divide(int x, int z) {
+    if (z == 0) {
+        printf("Erro: Divisão por zero.\n");
+        return -1; // Retorna -1 em caso de erro
+    }
+    return x / z;
+}
+
+```
+
 ### 6. Alocação de Variáveis em Memória RAM
 
 ### 7. Variável Local Static
